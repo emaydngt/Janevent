@@ -7,6 +7,7 @@
     <title>Document</title>
     <style>
         * {
+            box-sizing: border-box;
             margin: 0;
         }
 
@@ -36,7 +37,7 @@
             grid-template-areas: "header"
                 "main";
 
-            background-image: url(bg/bg2.jpg);
+            background-image: url(bg/bg4.jpg);
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
@@ -50,6 +51,7 @@
             letter-spacing: 2px;
             word-spacing: 2px;
             color: #ffffff;
+
             filter: drop-shadow(0 0 1px rgba(0, 0, 0, 0.5));
         }
 
@@ -116,14 +118,355 @@
             height: 40px;
         }
 
-
-
         .container2 {
             display: grid;
             min-height: 100vh;
-            grid-template-rows: 1fr;
+
+            grid-template-rows: auto 95fr;
             grid-template-areas:
+                "header"
                 "main";
+        }
+
+        .container2 header {
+            grid-area: header;
+            height: 97.97px;
+        }
+
+        .container2 main {
+            grid-area: main;
+        }
+
+        .container2 header>div {
+            display: flex;
+            text-align: center;
+            align-items: center;
+            justify-content: center;
+            gap: 7px;
+            height: 100%;
+        }
+
+        #all {
+            background-color: #2f3825;
+            color: white;
+        }
+
+        .container2 header p,
+        .container2 header h6 {
+            padding: 10px 20px;
+            background-color: white;
+            font-size: 16px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: normal;
+            border: 1px solid gray;
+            cursor: pointer;
+        }
+
+        .container2 header p:hover,
+        .container2 header h6:hover {
+            background-color: #2f3825;
+            color: white;
+        }
+
+        .container2 main {
+            display: flex;
+            justify-content: center;
+            padding: 0 0 30px;
+        }
+
+        #containerAll {
+            height: 99%;
+            display: grid;
+            grid-template-areas:
+                "img1 img2 img3"
+                "img4 img5 img6"
+                "img7 img8 img9";
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows: 1fr 1fr 1fr;
+            gap: 20px;
+
+        }
+
+        #containerWeddings {
+            height: 99%;
+            display: grid;
+            grid-template-areas:
+                "img2 img4 img7"
+                "img8 img5 img6";
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows: 1fr 1fr;
+            gap: 20px;
+        }
+
+        #containerBirthdays {
+            height: 99%;
+            display: grid;
+            grid-template-areas:
+                "img1 img5 img7";
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows: 1fr;
+            gap: 20px;
+        }
+
+        #containerCorporate {
+            height: 99%;
+            display: grid;
+            grid-template-areas:
+                "img3 img9 img7";
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows: 1fr;
+            gap: 20px;
+        }
+
+        #containerOther {
+            height: 99%;
+            display: grid;
+            grid-template-areas:
+                "img3 img9 img7";
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows: 1fr;
+            gap: 20px;
+        }
+
+        #containerOther {
+            height: 99%;
+            display: grid;
+            grid-template-areas:
+                "img6 img9 img7";
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows: 1fr;
+            gap: 20px;
+        }
+
+        .container2 main div>div {
+            width: 30vw;
+            height: 90vh;
+            border-radius: 20px;
+            align-items: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+
+
+        .container2 main div div>div {
+            padding: 30px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+
+        }
+
+        .container2 main p,
+        .container2 main h6 {
+            font-size: 20px;
+            color: white;
+            text-shadow: #000000 0px 0px 5px, #000000 0px 0px 10px, #000000 0px 0px 15px, #000000 0px 0px 20px, #000000 0px 0px 30px, #000000 0px 0px 40px, #000000 0px 0px 50px, #000000 0px 0px 75px;
+        }
+
+        .img1 {
+            grid-area: img1;
+            background-image: url(gallery/img1.jpg);
+        }
+
+        .img2 {
+            grid-area: img2;
+            background-image: url(gallery/img2.jpg);
+        }
+
+        .img3 {
+            grid-area: img3;
+            background-image: url(gallery/img3.jpg);
+        }
+
+        .img4 {
+            grid-area: img4;
+            background-image: url(gallery/img4.jpg);
+        }
+
+        .img5 {
+            grid-area: img5;
+            background-image: url(gallery/img5.jpg);
+        }
+
+        .img6 {
+            grid-area: img6;
+            background-image: url(gallery/img6.jpg);
+        }
+
+        .img7 {
+            grid-area: img7;
+            background-image: url(gallery/img7.jpg);
+        }
+
+        .img8 {
+            grid-area: img8;
+            background-image: url(gallery/img8.jpg);
+        }
+
+        .img9 {
+            grid-area: img9;
+            background-image: url(gallery/img9.jpg);
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        .container4 {
+            min-height: 100vh;
+            display: grid;
+            grid-template-areas:
+                "main"
+                "footerr"
+                "footerrr";
+            grid-template-rows: 65fr 30fr 5fr;
+
+            background-image: url(bg/bg3.jpg);
+            background-size: cover;
+            background-position: center;
+        }
+
+        .container4 main {
+            grid-area: main;
+            display: flex;
+            text-align: center;
+            align-items: center;
+            justify-content: center;
+            gap: 30px;
+        }
+
+        .container4 footer {
+            grid-area: footerr;
+            background-color: #2f382554;
+            backdrop-filter: blur(4px);
+        }
+
+        .fcontainer {
+            display: grid;
+            grid-template-areas: "f1 f2 f3 f4";
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            height: 100%;
+        }
+
+        .fcontainer>div {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            padding: 20px;
+        }
+
+        .f1 {
+            justify-content: space-evenly;
+        }
+
+        .f2 {
+            justify-content: space-between;
+        }
+
+        .f3 {
+            justify-content: space-between;
+        }
+
+        .f4 {
+            justify-content: start;
+            gap: 10px;
+        }
+
+        .f4 img {
+            height: 1.8rem;
+            width: 1.8rem;
+        }
+
+
+
+        .f4 div {
+            display: flex;
+            gap: 10px;
+        }
+
+        .fcontainer p {
+            font-family: Georgia, serif;
+            letter-spacing: 2px;
+            word-spacing: 2px;
+            color: #ffffff;
+        }
+
+
+
+        .fcontainer h6 {
+            font-family: Georgia, serif;
+            letter-spacing: 2px;
+            word-spacing: 2px;
+            font-size: 20px;
+            color: #ffffff;
+        }
+
+        .fcontainer a {
+            font-family: Georgia, serif;
+            letter-spacing: 2px;
+            word-spacing: 2px;
+            font-size: 20px;
+            color: #ffffff;
+            text-decoration: none;
+
+        }
+
+
+
+
+
+
+
+
+
+        .pinakafooter {
+            grid-area: footerrr;
+            background-color: #10130c;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .pinakafooter p {
+            font-family: Georgia, serif;
+            letter-spacing: 2px;
+            word-spacing: 2px;
+            font-size: 20px;
+            color: #ffffff;
         }
 
         @media (max-width: 600px) {
@@ -197,8 +540,364 @@
         </main>
     </div>
 
-    <div class="container2"></div>
+    <div class="container2">
+        <header>
+            <div>
+                <h6 id="all" onclick="allbutton()">All</h6>
+                <p id="weddings" onclick="weddingbutton()">Weddings</p>
+                <p id="birthday" onclick="birthdaybutton()">Birthdays</p>
+                <p id="corporate" onclick="corporatebutton()">Corporate</p>
+                <h6 id="other" onclick="otherbutton()">Other</h6>
+            </div>
+        </header>
 
+        <main>
+            <!-- All div -->
+            <div id="containerAll">
+                <div class="img1">
+                    <div>
+                        <h6>Birthday</h6>
+                        <p>Elegant celebrations</p>
+                    </div>
+                </div>
+
+                <div class="img2">
+                    <div>
+                        <h6>Wedding</h6>
+                        <p>Elegant celebrations</p>
+                    </div>
+
+                </div>
+
+                <div class="img3">
+                    <div>
+                        <h6>Corporate</h6>
+                        <p>Elegant celebrations</p>
+                    </div>
+                </div>
+
+                <div class="img4">
+                    <div>
+                        <h6>Wedding</h6>
+                        <p>Elegant celebrations</p>
+                    </div>
+
+                </div>
+
+                <div class="img5">
+                    <div>
+                        <h6>Birthday</h6>
+                        <p>Elegant celebrations</p>
+                    </div>
+
+                </div>
+
+                <div class="img6">
+                    <div>
+                        <h6>Other</h6>
+                        <p>Elegant celebrations</p>
+                    </div>
+
+                </div>
+
+                <div class="img7">
+                    <div>
+                        <h6>Wedding</h6>
+                        <p>Elegant celebrations</p>
+                    </div>
+                </div>
+
+                <div class="img8">
+                    <div>
+                        <h6>Wedding</h6>
+                        <p>Elegant celebrations</p>
+                    </div>
+                </div>
+
+                <div class="img9">
+                    <div>
+                        <h6>Corporate</h6>
+                        <p>Elegant celebrations</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <div id="containerWeddings" style="display: none;">
+                <div class="img2">
+                    <div>
+                        <h6>Wedding</h6>
+                        <p>Elegant celebrations</p>
+                    </div>
+                </div>
+
+                <div class="img4">
+                    <div>
+                        <h6>Wedding</h6>
+                        <p>Elegant celebrations</p>
+                    </div>
+                </div>
+
+                <div class="img7">
+                    <div>
+                        <h6>Wedding</h6>
+                        <p>Elegant celebrations</p>
+                    </div>
+                </div>
+
+                <div class="img8">
+                    <div>
+                        <h6>Wedding</h6>
+                        <p>Elegant celebrations</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <div id="containerBirthdays" style="display: none;">
+                <div class="img1">
+                    <div>
+                        <h6>Birthday</h6>
+                        <p>Elegant celebrations</p>
+                    </div>
+                </div>
+
+                <div class="img5">
+                    <div>
+                        <h6>Birthday</h6>
+                        <p>Elegant celebrations</p>
+                    </div>
+                </div>
+            </div>
+
+            <div id="containerCorporate" style="display: none;">
+                <div class=" img3">
+                    <div>
+                        <h6>Corporate</h6>
+                        <p>Elegant celebrations</p>
+                    </div>
+                </div>
+
+                <div class="img9">
+                    <div>
+                        <h6>Corporate</h6>
+                        <p>Elegant celebrations</p>
+                    </div>
+                </div>
+            </div>
+
+            <div id="containerOther" style="display: none;">
+                <div class="img6">
+                    <div>
+                        <h6>Other</h6>
+                        <p>Elegant celebrations</p>
+                    </div>
+                </div>
+
+
+
+
+
+
+        </main>
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class="container4">
+        <main>
+
+
+
+
+        </main>
+        <footer>
+            <div class="fcontainer">
+                <div class="f1">
+                    <img src="logo.png" alt="logo">
+                    <p>The Perfect Place for your
+                        Special Moments.</p>
+                </div>
+                <div class="f2">
+                    <h6>Quick links</h6>
+                    <a href="">Home</a>
+                    <a href="">About</a>
+                    <a href="">Content</a>
+                    <a href="">Book now</a>
+
+                </div>
+                <div class="f3">
+                    <h6>Contact</h6>
+                    <p>+63 912 345 6789</p>
+                    <p>janevent@gmail.com</p>
+                    <p>Brgy, Cainta, Rizal, Philippines.</p>
+                </div>
+                <div class="f4">
+                    <h6>Follow us</h6>
+                    <div>
+                        <a href="facebook"><img src="icon/facebook.png" alt="Facebook icon"></a>
+                        <a href="Ig"><img src="icon/instagram.png" alt="Instagram icon"></a>
+                        <a href="Tiktok"><img src="icon/tiktok.png" alt="Tiktok icon"></a>
+                    </div>
+
+                </div>
+            </div>
+        </footer>
+        <div class="pinakafooter">
+            <p>&copy; 2026 Janevent. All Rights Reserved.</p>
+        </div>
+    </div>
+
+    <script>
+        function allbutton() {
+            document.getElementById("containerAll").style.display = "grid";
+            document.getElementById("containerWeddings").style.display = "none";
+            document.getElementById("containerBirthdays").style.display = "none";
+            document.getElementById("containerCorporate").style.display = "none";
+            document.getElementById("containerOther").style.display = "none";
+
+            document.getElementById("all").style.backgroundColor = "#2f3825"
+            document.getElementById("all").style.color = "white"
+
+            document.getElementById("weddings").style.backgroundColor = "white"
+            document.getElementById("weddings").style.color = "black"
+
+            document.getElementById("birthday").style.backgroundColor = "white"
+            document.getElementById("birthday").style.color = "black"
+
+            document.getElementById("corporate").style.backgroundColor = "white"
+            document.getElementById("corporate").style.color = "black"
+
+            document.getElementById("other").style.backgroundColor = "white"
+            document.getElementById("other").style.color = "black"
+        }
+
+        function weddingbutton() {
+            document.getElementById("containerAll").style.display = "none";
+            document.getElementById("containerWeddings").style.display = "grid";
+            document.getElementById("containerBirthdays").style.display = "none";
+            document.getElementById("containerCorporate").style.display = "none";
+            document.getElementById("containerOther").style.display = "none";
+
+            document.getElementById("all").style.backgroundColor = "white"
+            document.getElementById("all").style.color = "black"
+
+            document.getElementById("weddings").style.backgroundColor = "#2f3825"
+            document.getElementById("weddings").style.color = "white"
+
+            document.getElementById("birthday").style.backgroundColor = "white"
+            document.getElementById("birthday").style.color = "black"
+
+            document.getElementById("corporate").style.backgroundColor = "white"
+            document.getElementById("corporate").style.color = "black"
+
+            document.getElementById("other").style.backgroundColor = "white"
+            document.getElementById("other").style.color = "black"
+        }
+
+        function birthdaybutton() {
+            document.getElementById("containerAll").style.display = "none";
+            document.getElementById("containerWeddings").style.display = "none";
+            document.getElementById("containerBirthdays").style.display = "grid";
+            document.getElementById("containerCorporate").style.display = "none";
+            document.getElementById("containerOther").style.display = "none";
+
+            document.getElementById("all").style.backgroundColor = "white"
+            document.getElementById("all").style.color = "black"
+
+            document.getElementById("weddings").style.backgroundColor = "white"
+            document.getElementById("weddings").style.color = "black"
+
+            document.getElementById("birthday").style.backgroundColor = "#2f3825"
+            document.getElementById("birthday").style.color = "white"
+
+            document.getElementById("corporate").style.backgroundColor = "white"
+            document.getElementById("corporate").style.color = "black"
+
+            document.getElementById("other").style.backgroundColor = "white"
+            document.getElementById("other").style.color = "black"
+        }
+
+        function corporatebutton() {
+            document.getElementById("containerAll").style.display = "none";
+            document.getElementById("containerWeddings").style.display = "none";
+            document.getElementById("containerBirthdays").style.display = "none";
+            document.getElementById("containerCorporate").style.display = "grid";
+            document.getElementById("containerOther").style.display = "none";
+
+            document.getElementById("all").style.backgroundColor = "white"
+            document.getElementById("all").style.color = "black"
+
+            document.getElementById("weddings").style.backgroundColor = "white"
+            document.getElementById("weddings").style.color = "black"
+
+            document.getElementById("birthday").style.backgroundColor = "white"
+            document.getElementById("birthday").style.color = "black"
+
+            document.getElementById("corporate").style.backgroundColor = "#2f3825"
+            document.getElementById("corporate").style.color = "white"
+
+            document.getElementById("other").style.backgroundColor = "white"
+            document.getElementById("other").style.color = "black"
+        }
+
+        function otherbutton() {
+            document.getElementById("containerAll").style.display = "none";
+            document.getElementById("containerWeddings").style.display = "none";
+            document.getElementById("containerBirthdays").style.display = "none";
+            document.getElementById("containerCorporate").style.display = "none";
+            document.getElementById("containerOther").style.display = "grid";
+
+            document.getElementById("all").style.backgroundColor = "white"
+            document.getElementById("all").style.color = "black"
+
+            document.getElementById("weddings").style.backgroundColor = "white"
+            document.getElementById("weddings").style.color = "black"
+
+            document.getElementById("birthday").style.backgroundColor = "white"
+            document.getElementById("birthday").style.color = "black"
+
+            document.getElementById("corporate").style.backgroundColor = "white"
+            document.getElementById("corporate").style.color = "black"
+
+            document.getElementById("other").style.backgroundColor = "#2f3825"
+            document.getElementById("other").style.color = "white"
+        }
+
+    </script>
 </body>
 
 </html>
