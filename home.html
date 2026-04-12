@@ -4,15 +4,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>janevent.com</title>
+    <title>Janevent</title>
     <style>
         * {
             margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
 
         body {
-            height: 100vh;  
-
+            height: 100vh;
         }
 
         .bgoverlay {
@@ -24,25 +25,18 @@
             background: radial-gradient(#2f3825, black 70%);
             opacity: 0.7;
             z-index: 0;
-
         }
-
-
 
         .container {
             display: grid;
             min-height: 100vh;
             grid-template-rows: 10fr 90fr;
-            grid-template-areas: "header"
-                "main";
-
+            grid-template-areas: "header" "main";
             background-image: url(bg/bg.jpg);
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
         }
-
-
 
         .container h6 {
             font-family: Georgia, serif;
@@ -50,13 +44,11 @@
             letter-spacing: 2px;
             word-spacing: 2px;
             color: #ffffff;
-
             filter: drop-shadow(0 0 1px rgba(0, 0, 0, 0.5));
         }
 
         .container p {
             font-size: 0.2;
-
             filter: drop-shadow(0 0 1px rgba(0, 0, 0, 0.5));
             font-family: Georgia, serif;
             letter-spacing: 2px;
@@ -92,13 +84,6 @@
             padding: 0 40px;
         }
 
-        .container2 main>div {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-        }
-
         .container a {
             text-decoration: none;
             color: rgb(255, 255, 255);
@@ -122,20 +107,7 @@
             height: 40px;
         }
 
-
-
-        .container2 {
-            display: grid;
-            min-height: 100vh;
-            grid-template-rows: 1fr;
-            grid-template-areas:
-                "main";
-        }
-
-        
-
         @media (max-width: 600px) {
-
             .links {
                 display: flex;
                 justify-content: center;
@@ -145,11 +117,9 @@
             .logo {
                 display: none;
             }
-
         }
 
         @media (max-width: 470px) {
-
             body {
                 overflow-x: hidden;
             }
@@ -162,30 +132,366 @@
                 font-size: 13px;
             }
 
-
             .container a {
-                font-size: 20px;
+                font-size: 15px;
             }
 
             .links {
                 justify-content: center;
                 gap: 20px;
             }
-
-
         }
-
-
 
         .title {
             text-shadow: #000000 0px 0px 5px, #000000 0px 0px 10px, #000000 0px 0px 15px, #000000 0px 0px 20px, #000000 0px 0px 30px, #000000 0px 0px 40px, #000000 0px 0px 50px, #000000 0px 0px 75px;
             color: #FFFFFF;
+        }
+
+        /* ── SERVICES ── */
+        .container2 {
+            display: grid;
+            min-height: 100vh;
+        }
+
+        .container2 h3,
+        .container2 h6 {
+            text-align: center;
+            column-gap: 10px;
+            font-family: Georgia, serif;
+            letter-spacing: 2px;
+            word-spacing: 2px;
+        }
+
+        .container2 h3 {
+            font-size: 3.3rem;
+            padding-bottom: 10px;
+            padding-top: 40px;
+        }
+
+        .container2 h6 {
+            font-size: 2rem;
+            padding-bottom: 20px;
+            padding-top: 20px;
+        }
+
+        .cardcontainer {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            height: 67vh;
+        }
+
+        .cardcontainer div>div {
+            height: 65vh;
+            margin: auto;
+            background-color: #2f3825;
+            width: 25vw;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .container2 p {
+            color: white;
+        }
+
+        /* ── WHY CHOOSE US ── */
+        .container3 {
+            display: grid;
+            min-height: 100vh;
+            background-color: #2f3825;
+            grid-template-rows: auto 1fr;
+        }
+
+        .container3-header {
+            text-align: center;
+            padding: 60px 40px 30px;
+        }
+
+        .container3-header h3 {
+            font-family: Georgia, serif;
+            font-size: 3rem;
+            letter-spacing: 2px;
+            color: #ffffff;
+        }
+
+        .container3-header p {
+            font-family: Georgia, serif;
+            font-size: 1.1rem;
+            letter-spacing: 2px;
+            color: #c8d4b0;
+            margin-top: 14px;
+        }
+
+        .whyus-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+            padding: 30px 60px 60px;
+            align-items: start;
+        }
+
+        .whyus-card {
+            background-color: rgba(255, 255, 255, 0.07);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 20px;
+            padding: 36px 24px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            gap: 16px;
+            transition: background-color 0.25s, transform 0.25s;
+        }
+
+        .whyus-card:hover {
+            background-color: rgba(255, 255, 255, 0.13);
+            transform: translateY(-4px);
+        }
+
+        .whyus-icon {
+            width: 70px;
+            height: 70px;
+            background-color: rgba(255, 255, 255, 0.12);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+        }
+
+        .whyus-card h5 {
+            font-family: Georgia, serif;
+            font-size: 1.15rem;
+            letter-spacing: 1px;
+            color: #ffffff;
+        }
+
+        .whyus-card p {
+            font-family: Georgia, serif;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            color: #c8d4b0;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 900px) {
+            .whyus-grid {
+                grid-template-columns: repeat(2, 1fr);
+                padding: 30px 30px 50px;
+            }
+        }
+
+        @media (max-width: 500px) {
+            .whyus-grid {
+                grid-template-columns: 1fr;
+                padding: 20px 20px 40px;
+            }
+
+            .container3-header h3 {
+                font-size: 2rem;
+            }
+        }
+
+        /* ── CTA / BOOKING ── */
+        .container4 {
+            min-height: 100vh;
+            display: grid;
+            grid-template-areas:
+                "main"
+                "footerr"
+                "footerrr";
+            grid-template-rows: 65fr 30fr 5fr;
+            background-image: url(bg/bg3.jpg);
+            background-size: cover;
+            background-position: center;
+        }
+
+        .container4 main {
+            grid-area: main;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .container4 main::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(ellipse at center, rgba(16,19,12,0.55) 0%, rgba(0,0,0,0.75) 100%);
+        }
+
+        .cta-inner {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 28px;
+            padding: 0 11vw;
+            text-shadow: 0 0 8px rgba(0,0,0,0.8), 0 0 20px rgba(0,0,0,0.6);
+        }
+
+        .cta-inner h6 {
+            font-family: Georgia, serif;
+            font-size: 3rem;
+            letter-spacing: 2px;
+            word-spacing: 3px;
+            color: #ffffff;
+        }
+
+        .cta-inner p {
+            font-family: Georgia, serif;
+            font-size: 1.15rem;
+            letter-spacing: 2px;
+            word-spacing: 2px;
+            color: #e0e8d4;
+            max-width: 600px;
+            line-height: 1.7;
+        }
+
+        .cta-inner a {
+            text-decoration: none;
+            background-color: #2f3825;
+            color: #ffffff;
+            font-family: Georgia, serif;
+            font-size: 1rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            padding: 18px 52px;
+            border-radius: 6px;
+            border: 1px solid rgba(255,255,255,0.25);
+            transition: background-color 0.25s, color 0.25s, transform 0.2s;
+        }
+
+        .cta-inner a:hover {
+            background-color: #ffffff;
+            color: #2f3825;
+            transform: translateY(-2px);
+        }
+
+        @media (max-width: 470px) {
+            .cta-inner h6 {
+                font-size: 1.8rem;
+            }
+
+            .cta-inner p {
+                font-size: 0.9rem;
+            }
+
+            .cta-inner a {
+                font-size: 0.85rem;
+                padding: 14px 36px;
+            }
+        }
+
+        /* ── FOOTER ── */
+        .container4 footer {
+            grid-area: footerr;
+            background-color: #2f382554;
+            backdrop-filter: blur(4px);
+        }
+
+        .fcontainer {
+            display: grid;
+            grid-template-areas: "f1 f2 f3 f4";
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            height: 100%;
+        }
+
+        .fcontainer>div {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            padding: 20px;
+        }
+
+        .f1 { justify-content: space-evenly; }
+        .f2 { justify-content: space-between; }
+        .f3 { justify-content: space-between; }
+        .f4 { justify-content: start; gap: 10px; }
+
+        .f4 img {
+            height: 1.8rem;
+            width: 1.8rem;
+        }
+
+        .f4 div {
+            display: flex;
+            gap: 10px;
+        }
+
+        .fcontainer p {
+            font-family: Georgia, serif;
+            letter-spacing: 2px;
+            word-spacing: 2px;
+            color: #ffffff;
+        }
+
+        .fcontainer h6 {
+            font-family: Georgia, serif;
+            letter-spacing: 2px;
+            word-spacing: 2px;
+            font-size: 20px;
+            color: #ffffff;
+        }
+
+        .fcontainer a {
+            font-family: Georgia, serif;
+            letter-spacing: 2px;
+            word-spacing: 2px;
+            font-size: 20px;
+            color: #ffffff;
+            text-decoration: none;
+        }
+
+        .pinakafooter {
+            grid-area: footerrr;
+            background-color: #10130c;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .pinakafooter p {
+            font-family: Georgia, serif;
+            letter-spacing: 2px;
+            word-spacing: 2px;
+            font-size: 20px;
+            color: #ffffff;
+        }
+
+        @media (max-width: 600px) {
+            .links {
+                display: flex;
+                justify-content: center;
+                gap: 30px;
+            }
+
+            .logo {
+                display: none;
+            }
+
+            .fcontainer {
+                grid-template-areas: "f3 f4";
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .f1, .f2 {
+                display: none;
+            }
+
+            .pinakafooter p {
+                font-size: 10px;
+            }
         }
     </style>
 </head>
 
 <body>
 
+    <!-- ── HERO ── -->
     <div class="container">
         <div class="bgoverlay"></div>
         <header>
@@ -196,7 +502,6 @@
                     <a href="about.html">About</a>
                     <a href="content.html">Content</a>
                     <a href="booknow.html">Book now</a>
-
                 </div>
             </nav>
         </header>
@@ -206,15 +511,113 @@
                 <div style="padding: 0 11vw; text-align: center; display: flex; align-items: center; flex-direction: column;"
                     class="title">
                     <h6>Janevent</h6>
-                    <p>The Perfect Place for your
-                        Special Moments.</p>
+                    <p>The Perfect Place for your Special Moments.</p>
                 </div>
             </div>
         </main>
     </div>
 
-    <div class="container2"></div>
+    <!-- ── SERVICES ── -->
+    <div class="container2">
+        <main>
+            <div>
+                <h3>SERVICES</h3>
+                <h6>We offer everything you need for a seamless event</h6>
+            </div>
+            <div class="cardcontainer">
+                <div>
+                    <div>
+                        <p>SWIMMING POOL</p>
+                    </div>
+                </div>
+                <div>
+                    <div>
+                        <p>FOOD AND DRINKS</p>
+                    </div>
+                </div>
+                <div>
+                    <div>
+                        <p>EVENT PLANNING</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- ── WHY CHOOSE US ── -->
+    <div class="container3">
+        <div class="container3-header">
+            <h3>WHY CHOOSE US?</h3>
+            <p>Everything you need to make your celebration truly unforgettable</p>
+        </div>
+
+        <div class="whyus-grid">
+            <div class="whyus-card">
+                <div class="whyus-icon">🏅</div>
+                <h5>Experienced Staff</h5>
+                <p>Our professional and dedicated team has handled hundreds of events — so your big day is always in expert hands.</p>
+            </div>
+            <div class="whyus-card">
+                <div class="whyus-icon">🌿</div>
+                <h5>Beautiful Venue</h5>
+                <p>Scenic gardens, elegant halls, and stunning spaces that set the perfect backdrop for any celebration.</p>
+            </div>
+            <div class="whyus-card">
+                <div class="whyus-icon">📦</div>
+                <h5>Flexible Packages</h5>
+                <p>From intimate gatherings to grand occasions, we have packages to fit every vision and budget.</p>
+            </div>
+            <div class="whyus-card">
+                <div class="whyus-icon">💰</div>
+                <h5>Affordable Pricing</h5>
+                <p>Premium quality service at fair and transparent prices — no hidden fees, just value you can count on.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- ── CTA / BOOK NOW ── -->
+    <div class="container4">
+        <main>
+            <div class="cta-inner">
+                <h6>Let's Make Your Next Event Unforgettable</h6>
+                <p>Book your date with us today and create memories that last a lifetime. Our team is ready to bring your vision to life.</p>
+                <a href="booknow.html">BOOK NOW</a>
+            </div>
+        </main>
+
+        <footer>
+            <div class="fcontainer">
+                <div class="f1">
+                    <img src="logo.png" alt="logo">
+                    <p>The Perfect Place for your Special Moments.</p>
+                </div>
+                <div class="f2">
+                    <a href="home.html">Home</a>
+                    <a href="about.html">About</a>
+                    <a href="content.html">Content</a>
+                    <a href="booknow.html">Book now</a>
+                </div>
+                <div class="f3">
+                    <h6>Contact</h6>
+                    <p>+63 912 345 6789</p>
+                    <p>janevent@gmail.com</p>
+                    <p>Brgy, Cainta, Rizal, Philippines.</p>
+                </div>
+                <div class="f4">
+                    <h6>Follow us</h6>
+                    <div>
+                        <a href="facebook"><img src="icon/facebook.png" alt="Facebook icon"></a>
+                        <a href="Ig"><img src="icon/instagram.png" alt="Instagram icon"></a>
+                        <a href="Tiktok"><img src="icon/tiktok.png" alt="Tiktok icon"></a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <div class="pinakafooter">
+            <p>&copy; 2026 Janevent. All Rights Reserved.</p>
+        </div>
+    </div>
 
 </body>
-
 </html>
