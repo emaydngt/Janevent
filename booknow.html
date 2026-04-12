@@ -9,11 +9,13 @@
         * {
             margin: 0;
             box-sizing: border-box;
+            padding: 0;
         }
 
         body {
             height: 100vh;
 
+            font-family: Georgia, serif;
         }
 
         .bgoverlay {
@@ -78,6 +80,7 @@
             height: 100%;
             position: relative;
             z-index: 1;
+
         }
 
         .logo {
@@ -121,7 +124,6 @@
 
         .container2 {
             display: grid;
-            min-height: 150vh;
             grid-template-rows: 1fr;
             grid-template-areas:
                 "main";
@@ -131,17 +133,459 @@
 
         .container2 main {
             display: flex;
-            align-items: center;
-            justify-content: center;
+            padding: 0 0 20px;
+            padding-top: 20px;
             width: 100%;
+            flex-direction: column;
         }
 
 
         .fcontainer {
-            width: 80vw;
-            height: 140vh;
             background-color: white;
+            width: 80vw;
             border-radius: 30px;
+            margin-inline: auto;
+            display: grid;
+            grid-template-areas:
+                "main";
+        }
+
+        form {
+            padding: 0 0 20px;
+        }
+
+        .formhead {
+            text-align: center;
+            padding: 30px;
+            grid-area: header;
+
+        }
+
+        .fcontainer>div {
+            grid-area: main;
+            padding: 0 30px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .fieldrow {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            padding: 0 0 16px;
+        }
+
+        .fieldrow.full {
+            grid-template-columns: 1fr;
+        }
+
+        .field {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .field input {
+            height: 35px;
+            border: 1px gray solid;
+            border-radius: 10px;
+            padding: 0 10px;
+            font-size: 0.9em;
+            font-family: Georgia, serif;
+        }
+
+        .field label,
+        .name,
+        .sectioname {
+            font-size: 1.2em;
+            font-family: Georgia, serif;
+        }
+
+        .eventcontainer {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            padding: 0 0 16px;
+        }
+
+        .cardcontainer input[type="radio"] {
+            position: absolute;
+            width: 0;
+            height: 0;
+        }
+
+        .card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 16px 8px;
+            transition: border-color 0.15s;
+            text-align: center;
+            cursor: pointer;
+            border-radius: 10px;
+        }
+
+        input:checked+.card {
+            border: 1.5px solid #10130c;
+            background: #2f3825fd;
+            color: white;
+        }
+
+        .fieldrow select {
+            width: 100%;
+            height: 35px;
+            border: 1px gray solid;
+            border-radius: 10px;
+            padding: 0 10px;
+            font-size: 0.9em;
+            font-family: Georgia, serif;
+        }
+
+        .field input[type="range"] {
+            accent-color: #2f3825;
+            width: 100%;
+        }
+
+        .addonitem {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px 14px;
+            cursor: pointer;
+            transition: border-color 0.15s;
+
+        }
+
+        .add-ons {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 8px;
+            margin-bottom: 16px;
+        }
+
+        .addonitem input[type="checkbox"] {
+            width: 15px;
+            height: 15px;
+            accent-color: #2f3825;
+            cursor: pointer;
+
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 90px;
+            padding: 7px;
+            border-radius: 10px;
+        }
+
+        .submitrow {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-top: 2rem;
+            gap: 16px;
+        }
+
+        .btnbook {
+            font-size: 14px;
+            font-weight: 500;
+            color: #fff;
+            background: #2f3825;
+            border: none;
+            padding: 12px 28px;
+            cursor: pointer;
+            transition: background 0.15s, transform 0.1s;
+            border-radius: 10px;
+        }
+
+        .price-preview {
+            font-size: 13px;
+        }
+
+        .price-preview strong {
+            display: block;
+            font-size: 20px;
+            font-weight: 500;
+        }
+
+        .container2 footer {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            width: 80vw;
+            margin-inline: auto;
+        }
+
+        .container2 footer>div {
+            text-align: center;
+        }
+
+        .container2 footer img {
+            height: 100px;
+            width: auto;
+            padding: 0 0 16px;
+        }
+
+        .container2 footer h6,
+        .container2 footer p {
+            font-family: Georgia, serif;
+            letter-spacing: 2px;
+            word-spacing: 2px;
+            color: white;
+        }
+
+        .container2 footer h6 {
+            font-size: 30px;
+            padding: 0 0 13px;
+        }
+
+        .container2 footer p {
+            font-size: 17px;
+        }
+
+
+
+
+
+
+
+        .container4 {
+            min-height: 100vh;
+            display: grid;
+            grid-template-areas:
+                "main"
+                "footerr"
+                "footerrr";
+            grid-template-rows: 65fr 30fr 5fr;
+
+            background-image: url(bg/bg3.jpg);
+            background-size: cover;
+            background-position: center;
+        }
+
+        .container4 main {
+            grid-area: main;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 30px;
+        }
+
+
+
+        .container4 footer {
+            grid-area: footerr;
+            background-color: #2f382554;
+            backdrop-filter: blur(4px);
+        }
+
+        .footercontainer {
+            display: grid;
+            grid-template-areas: "f1 f2 f3 f4";
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            height: 100%;
+        }
+
+        .footercontainer>div {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            padding: 20px;
+        }
+
+        .f1 {
+            justify-content: space-evenly;
+        }
+
+        .f2 {
+            justify-content: space-between;
+        }
+
+        .f3 {
+            justify-content: space-between;
+        }
+
+        .f4 {
+            justify-content: start;
+            gap: 10px;
+        }
+
+        .f4 img {
+            height: 1.8rem;
+            width: 1.8rem;
+        }
+
+
+
+        .f4 div {
+            display: flex;
+            gap: 10px;
+        }
+
+        .footercontainer p {
+            font-family: Georgia, serif;
+            letter-spacing: 2px;
+            word-spacing: 2px;
+            color: #ffffff;
+        }
+
+
+
+        .footercontainer h6 {
+            font-family: Georgia, serif;
+            letter-spacing: 2px;
+            word-spacing: 2px;
+            font-size: 20px;
+            color: #ffffff;
+        }
+
+        .footercontainer a {
+            font-family: Georgia, serif;
+            letter-spacing: 2px;
+            word-spacing: 2px;
+            font-size: 20px;
+            color: #ffffff;
+            text-decoration: none;
+
+        }
+
+
+
+
+        .pinakafooter {
+            grid-area: footerrr;
+            background-color: #10130c;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .pinakafooter p {
+            font-family: Georgia, serif;
+            letter-spacing: 2px;
+            word-spacing: 2px;
+            font-size: 20px;
+            color: #ffffff;
+        }
+
+        iframe {
+            height: 50vh;
+            width: 90vw;
+            border-radius: 10px;
+            border: 0;
+        }
+
+        @media (max-width: 970px) {
+
+            .container4 {
+                display: grid;
+                grid-template-areas:
+                    "main"
+                    "footerr"
+                    "footerrr";
+                grid-template-rows: 70fr 25fr 5fr;
+            }
+
+
+        }
+
+        @media (max-width: 800px) {
+            .footercontainer {
+                display: grid;
+                grid-template-areas: "f2 f3 f4";
+                grid-template-columns: 0 1fr 1fr 1fr;
+                height: 100%;
+            }
+
+            .f1 {
+                display: none;
+            }
+
+            .f1 img {
+                display: none;
+            }
+
+            .f1 p {
+                display: none;
+            }
+
+            .f4 {
+                justify-content: space-between;
+            }
+        }
+
+
+        @media (max-width:750px) {
+
+
+            .container2 footer {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 20px;
+            }
+
+            .bottom {
+                grid-column: 1/3;
+            }
+
+        }
+
+        @media (max-width:700px) {
+
+            .responsive>div {
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .eventcontainer {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .submitrow {
+                display: flex;
+                flex-direction: column;
+            }
+
+            .add-ons {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 8px;
+                margin-bottom: 16px;
+            }
+
+            .fieldrow select {
+                width: auto;
+            }
+
+
+            .field input[type="range"],
+            .field input[type="date"],
+            .field input[type="time"] {
+                width: 100%;
+            }
+
+            .fcontainer {
+                width: 90vw;
+
+            }
+
+
+            .container2 footer h6 {
+                font-size: 15px;
+                padding: 0 0 13px;
+            }
+
+            .container2 footer p {
+                font-size: 10px;
+            }
+
+            .container2 footer img {
+                height: 70px;
+            }
+
+
+
         }
 
         @media (max-width: 600px) {
@@ -154,6 +598,30 @@
 
             .logo {
                 display: none;
+            }
+
+
+            .footercontainer {
+                display: grid;
+                grid-template-areas: "f3 f4";
+                grid-template-columns: 0 0 1fr 1fr;
+                height: 100%;
+            }
+
+            .f2 h6 {
+                display: none;
+
+            }
+
+            .f2 a {
+
+                display: none;
+            }
+
+
+
+            .pinakafooter p {
+                font-size: 10px;
             }
 
         }
@@ -174,7 +642,7 @@
 
 
             .container a {
-                font-size: 20px;
+                font-size: 15px;
             }
 
             .links {
@@ -182,6 +650,26 @@
                 gap: 20px;
             }
 
+
+
+
+
+
+
+
+            .container4 footer p,
+            .container4 footer a {
+                font-size: 10px;
+            }
+
+            .container4 {
+                display: grid;
+                grid-template-areas:
+                    "main"
+                    "footerr"
+                    "footerrr";
+                grid-template-rows: 65fr 30fr 5fr;
+            }
 
         }
     </style>
@@ -193,7 +681,7 @@
         <div class="bgoverlay"></div>
         <header>
             <nav>
-                <div><img class="logo" src="logo.png" alt="logo"></div>
+                <div><ifield-row field-row field-row field-rowmg class="logo" src="logo.png" alt="logo"></div>
                 <div class="links">
                     <a href="home.html">Home</a>
                     <a href="about.html">About</a>
@@ -218,13 +706,241 @@
     <div class="container2">
         <main>
             <div class="fcontainer">
-                <h1 style="text-align: center; padding: 30px;">BOOKING FORM</h1>   
+
+                <div style="display: flex; flex-direction: column;">
+                    <h1 class="formhead">BOOKING FORM</h1>
+                    <form action="booknow.html" method="post">
+
+                        <div class="responsive">
+                            <div class="fieldrow">
+                                <div class="field">
+                                    <label for="fname">First name</label>
+                                    <input type="text" id="fname" placeholder="Emay" />
+                                </div>
+                                <div class="field">
+                                    <label for="lname">Last name</label>
+                                    <input type="text" id="lname" placeholder="Dangate" />
+                                </div>
+                            </div>
+                            <div class="fieldrow">
+                                <div class="field">
+                                    <label for="email">Email address</label>
+                                    <input type="email" id="email" placeholder="emay@example.com" />
+                                </div>
+                                <div class="field">
+                                    <label for="phone">Phone number</label>
+                                    <input type="tel" id="phone" placeholder="+63 912 345 6789" />
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <p class="sectioname">Event type</p>
+                        <div class="eventcontainer">
+                            <label class="cardcontainer">
+                                <input type="radio" name="event_type" value="wedding" checked />
+                                <div class="card">
+                                    <img src="/icon/wedding-rings.png" alt="wedding icon">
+                                    <span class="name">Wedding</span>
+                                </div>
+                            </label>
+                            <label class="cardcontainer">
+                                <input type="radio" name="event_type" value="corporate" />
+                                <div class="card">
+                                    <img src="/icon/corporation.png" alt="corporation icon">
+                                    <span class="name">Corporate</span>
+                                </div>
+                            </label>
+
+                            <label class="cardcontainer">
+                                <input type="radio" name="event_type" value="birthday" />
+                                <div class="card">
+                                    <img src="/icon/cake.png" alt="birthday icon">
+                                    <span class="name">Birthday</span>
+                                </div>
+                            </label>
+
+                            <label class="cardcontainer">
+                                <input type="radio" name="event_type" value="other" />
+                                <div class="card">
+                                    <img src="/icon/more.png" alt="other icon">
+                                    <span class="name">Other</span>
+                                </div>
+                            </label>
+                        </div>
+
+
+                        <div class="responsive">
+                            <div class="fieldrow">
+                                <div class="field">
+                                    <label for="event-date">Event date</label>
+                                    <input type="date" id="event-date" />
+                                </div>
+                                <div class="field">
+                                    <label for="event-time">Start time</label>
+                                    <input type="time" id="event-time" value="18:00" />
+                                </div>
+                            </div>
+
+                            <div class="fieldrow">
+                                <div class="field">
+                                    <label for="venue">Preferred venue</label>
+                                    <select id="venue">
+                                        <option value="">Select a venue</option>
+                                        <option>Grand Ballroom — up to 500 guests</option>
+                                        <option>Garden Pavilion — up to 200 guests</option>
+                                        <option>Rooftop Terrace — up to 100 guests</option>
+                                        <option>Private Dining Hall — up to 60 guests</option>
+                                        <option>I have my own venue</option>
+                                    </select>
+                                </div>
+
+
+
+                                <div class="field">
+                                    <label>Expected guests — <span id="guestnumber">80 people</span></label>
+                                    <div class="guests-row" style="margin-top: 6px;">
+                                        <input type="range" id="guests" min="10" max="500" step="10" value="80" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <p class="sectioname">Add-ons</p>
+                        <div class="add-ons">
+                            <label class="addonitem">
+                                <input type="checkbox" />
+                                <span class="addon-label">Catering & bar</span>
+                            </label>
+                            <label class="addonitem">
+                                <input type="checkbox" />
+                                <span class="addon-label">Photography</span>
+                            </label>
+                            <label class="addonitem">
+                                <input type="checkbox" />
+                                <span class="addon-label">AV & lighting</span>
+                            </label>
+                            <label class="addonitem">
+                                <input type="checkbox" />
+                                <span class="addon-label">Floral décor</span>
+                            </label>
+                            <label class="addonitem">
+                                <input type="checkbox" />
+                                <span class="addon-label">Live music / DJ</span>
+                            </label>
+                            <label class="addonitem">
+                                <input type="checkbox" />
+                                <span class="addon-label">Event coordinator</span>
+                            </label>
+                        </div>
+
+
+                        <div>
+                            <div class="field">
+                                <label for="notes">Special requests or notes</label>
+                                <textarea placeholder="Tell us about your event…"></textarea>
+                            </div>
+                        </div>
+
+
+                        <div class="submitrow">
+                            <div class="price-preview">
+                                <span style="font-size:11px;text-transform:uppercase;letter-spacing:0.08em;">Estimated
+                                    starting from</span>
+                                <strong id="price-out">₱ 28,000</strong>
+                            </div>
+                            <button class="btnbook" onclick="handleBook()">Request booking →</button>
+                        </div>
+
+
+
+                    </form>
+                </div>
 
             </div>
+
+            <h1 class="formhead" style="color: white;">CONTACT INFORMATION</h1>
+            <footer>
+                <div>
+                    <img src="icon/location.png" alt="location icon">
+                    <h6>Our location</h6>
+                    <p>Brgy. Green Hills, City, philippines</p>
+                </div>
+                <div>
+                    <img src="icon/telephone.png" alt="call icon">
+                    <h6>Phone</h6>
+                    <p>+63 912 345 6789<br>(09:00AM - 6:00PM)</p>
+                </div>
+                <div class="bottom">
+                    <img src="icon/mail.png" alt="mail icon">
+                    <h6>Email</h6>
+                    <p>info@janevent.com<br>We'll respond soon!</p>
+                </div>
+
+            </footer>
         </main>
 
     </div>
 
+    <div class="container4">
+        <main>
+            <div>
+                <iframe <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1144.774447636383!2d121.11945450678776!3d14.57801773577716!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397c79b626b53a7%3A0x9b1dbb80fb380be!2sOne%20Cainta%20College!5e0!3m2!1sen!2sph!4v1775882522484!5m2!1sen!2sph"
+                    allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+            </div>
+        </main>
+        <footer>
+            <div class="footercontainer">
+                <div class="f1">
+                    <img src="logo.png" alt="logo">
+                    <p>The Perfect Place for your
+                        Special Moments.</p>
+                </div>
+                <div class="f2">
+                    <h6>Quick links</h6>
+                    <a href="home.html">Home</a>
+                    <a href="about.html">About</a>
+                    <a href="content.html">Content</a>
+                    <a href="booknow.html">Book now</a>
+                </div>
+                <div class="f3">
+                    <h6>Contact</h6>
+                    <p>+63 912 345 6789</p>
+                    <p>janevent@gmail.com</p>
+                    <p>Brgy, Cainta, Rizal, Philippines.</p>
+                </div>
+                <div class="f4">
+                    <h6>Follow us</h6>
+                    <div>
+                        <a href="facebook"><img src="icon/facebook.png" alt="Facebook icon"></a>
+                        <a href="Ig"><img src="icon/instagram.png" alt="Instagram icon"></a>
+                        <a href="Tiktok"><img src="icon/tiktok.png" alt="Tiktok icon"></a>
+                    </div>
+
+                </div>
+            </div>
+        </footer>
+        <div class="pinakafooter">
+            <p>&copy; 2026 Janevent. All Rights Reserved.</p>
+        </div>
+    </div>
+
+
+    <script>
+        const guestSlider = document.getElementById('guests');
+        const guestLabel = document.getElementById('guestnumber');
+        const guests = parseInt(guestSlider.value);
+
+
+        function update() {
+            const guests = parseInt(guestSlider.value);
+            guestLabel.textContent = guests + ' people';
+        }
+
+        guestSlider.addEventListener('input', update);
+    </script>
 </body>
 
 </html>
