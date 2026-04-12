@@ -14,6 +14,7 @@
 
         body {
             height: 100vh;
+
         }
 
         .bgoverlay {
@@ -25,18 +26,25 @@
             background: radial-gradient(#2f3825, black 70%);
             opacity: 0.7;
             z-index: 0;
+
         }
+
+
 
         .container {
             display: grid;
             min-height: 100vh;
             grid-template-rows: 10fr 90fr;
-            grid-template-areas: "header" "main";
+            grid-template-areas: "header"
+                "main";
+
             background-image: url(bg/bg.jpg);
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
         }
+
+
 
         .container h6 {
             font-family: Georgia, serif;
@@ -44,11 +52,13 @@
             letter-spacing: 2px;
             word-spacing: 2px;
             color: #ffffff;
+
             filter: drop-shadow(0 0 1px rgba(0, 0, 0, 0.5));
         }
 
         .container p {
             font-size: 0.2;
+
             filter: drop-shadow(0 0 1px rgba(0, 0, 0, 0.5));
             font-family: Georgia, serif;
             letter-spacing: 2px;
@@ -84,6 +94,8 @@
             padding: 0 40px;
         }
 
+
+
         .container a {
             text-decoration: none;
             color: rgb(255, 255, 255);
@@ -107,50 +119,15 @@
             height: 40px;
         }
 
-        @media (max-width: 600px) {
-            .links {
-                display: flex;
-                justify-content: center;
-                gap: 30px;
-            }
 
-            .logo {
-                display: none;
-            }
-        }
-
-        @media (max-width: 470px) {
-            body {
-                overflow-x: hidden;
-            }
-
-            .container h6 {
-                font-size: 2em;
-            }
-
-            .container p {
-                font-size: 13px;
-            }
-
-            .container a {
-                font-size: 15px;
-            }
-
-            .links {
-                justify-content: center;
-                gap: 20px;
-            }
-        }
 
         .title {
             text-shadow: #000000 0px 0px 5px, #000000 0px 0px 10px, #000000 0px 0px 15px, #000000 0px 0px 20px, #000000 0px 0px 30px, #000000 0px 0px 40px, #000000 0px 0px 50px, #000000 0px 0px 75px;
             color: #FFFFFF;
         }
 
-        /* ── SERVICES ── */
         .container2 {
             display: grid;
-            min-height: 100vh;
         }
 
         .container2 h3,
@@ -172,6 +149,7 @@
             font-size: 2rem;
             padding-bottom: 20px;
             padding-top: 20px;
+
         }
 
         .cardcontainer {
@@ -192,107 +170,162 @@
 
         .container2 p {
             color: white;
+
         }
 
-        /* ── WHY CHOOSE US ── */
         .container3 {
             display: grid;
-            min-height: 100vh;
-            background-color: #2f3825;
-            grid-template-rows: auto 1fr;
+            background-color: #ffffff;
+            padding: 30px;
         }
 
-        .container3-header {
+        .container3 .header3 {
             text-align: center;
-            padding: 60px 40px 30px;
         }
 
-        .container3-header h3 {
-            font-family: Georgia, serif;
+        .header3 h3 {
             font-size: 3rem;
             letter-spacing: 2px;
-            color: #ffffff;
+            color: #10130c;
         }
 
-        .container3-header p {
-            font-family: Georgia, serif;
-            font-size: 1.1rem;
+        .header3 p {
+            font-size: 1rem;
+            color: #555;
+            letter-spacing: 1px;
+            margin-top: 10px;
+        }
+
+        .header2 {
+            font-size: 1.3rem;
             letter-spacing: 2px;
-            color: #c8d4b0;
-            margin-top: 14px;
+            color: #2f3825;
+
         }
 
-        .whyus-grid {
+        .cardcontainer2 {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
-            gap: 24px;
-            padding: 30px 60px 60px;
-            align-items: start;
+            gap: 20px;
+            margin-bottom: 50px;
         }
 
-        .whyus-card {
-            background-color: rgba(255, 255, 255, 0.07);
-            border: 1px solid rgba(255, 255, 255, 0.15);
-            border-radius: 20px;
-            padding: 36px 24px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+        .pricecard {
+            background-color: whitesmoke;
+            border: 1px solid #e0ddd6;
+            border-radius: 12px;
+            padding: 28px 20px;
             text-align: center;
-            gap: 16px;
-            transition: background-color 0.25s, transform 0.25s;
+            transition: box-shadow 0.2s, transform 0.2s;
         }
 
-        .whyus-card:hover {
-            background-color: rgba(255, 255, 255, 0.13);
+        .pricecard:hover {
+            box-shadow: 0 8px 24px rgba(47, 56, 37, 0.15);
             transform: translateY(-4px);
+
         }
 
-        .whyus-icon {
-            width: 70px;
-            height: 70px;
-            background-color: rgba(255, 255, 255, 0.12);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 2rem;
+
+        .cardname {
+            font-size: 1.1rem;
+            font-weight: bold;
+            letter-spacing: 1.5px;
+            color: #2f3825;
+            margin-bottom: 8px;
         }
 
-        .whyus-card h5 {
-            font-family: Georgia, serif;
-            font-size: 1.15rem;
+        .cardcapacity {
+            font-size: 0.85rem;
+            color: #10130c;
             letter-spacing: 1px;
+            margin-bottom: 16px;
+        }
+
+        .cardprice {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #2f3825;
+            margin-bottom: 4px;
+        }
+
+        .cardnote {
+            font-size: 0.78rem;
+            color: #2f3825;
+            letter-spacing: 0.5px;
+        }
+
+        .pricecard.best {
+            background: #2f3825;
+            border-color: #2f3825;
+        }
+
+        .pricecard.best p {
+            color: #FFFFFF;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 50px;
+        }
+
+        table th,
+        table td {
+            padding: 14px 20px;
+            text-align: left;
+            font-family: Georgia, serif;
+            font-size: 0.95rem;
+            letter-spacing: 1px;
+        }
+
+        table td:last-child {
+            font-weight: bold;
+            color: #2f3825;
+        }
+
+        .container3 footer {
+            text-align: center;
+            padding-top: 10px;
+        }
+
+        .container3 footer p {
+            font-size: 0.95rem;
+            color: #555;
+            margin-bottom: 20px;
+            letter-spacing: 1px;
+        }
+
+        .container3 footer a {
+            display: inline-block;
+            background-color: #2f3825;
             color: #ffffff;
-        }
-
-        .whyus-card p {
+            text-decoration: none;
+            padding: 14px 40px;
+            border-radius: 8px;
             font-family: Georgia, serif;
-            font-size: 0.9rem;
-            letter-spacing: 1px;
-            color: #c8d4b0;
-            line-height: 1.6;
+            font-size: 1rem;
+            letter-spacing: 1.5px;
+            transition: background 0.2s, transform 0.15s;
         }
 
-        @media (max-width: 900px) {
-            .whyus-grid {
-                grid-template-columns: repeat(2, 1fr);
-                padding: 30px 30px 50px;
-            }
-        }
 
-        @media (max-width: 500px) {
-            .whyus-grid {
-                grid-template-columns: 1fr;
-                padding: 20px 20px 40px;
-            }
 
-            .container3-header h3 {
-                font-size: 2rem;
-            }
-        }
 
-        /* ── CTA / BOOKING ── */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         .container4 {
             min-height: 100vh;
             display: grid;
@@ -301,92 +334,14 @@
                 "footerr"
                 "footerrr";
             grid-template-rows: 65fr 30fr 5fr;
+
             background-image: url(bg/bg3.jpg);
             background-size: cover;
             background-position: center;
         }
 
-        .container4 main {
-            grid-area: main;
-            position: relative;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
 
-        .container4 main::before {
-            content: "";
-            position: absolute;
-            inset: 0;
-            background: radial-gradient(ellipse at center, rgba(16,19,12,0.55) 0%, rgba(0,0,0,0.75) 100%);
-        }
 
-        .cta-inner {
-            position: relative;
-            z-index: 1;
-            text-align: center;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 28px;
-            padding: 0 11vw;
-            text-shadow: 0 0 8px rgba(0,0,0,0.8), 0 0 20px rgba(0,0,0,0.6);
-        }
-
-        .cta-inner h6 {
-            font-family: Georgia, serif;
-            font-size: 3rem;
-            letter-spacing: 2px;
-            word-spacing: 3px;
-            color: #ffffff;
-        }
-
-        .cta-inner p {
-            font-family: Georgia, serif;
-            font-size: 1.15rem;
-            letter-spacing: 2px;
-            word-spacing: 2px;
-            color: #e0e8d4;
-            max-width: 600px;
-            line-height: 1.7;
-        }
-
-        .cta-inner a {
-            text-decoration: none;
-            background-color: #2f3825;
-            color: #ffffff;
-            font-family: Georgia, serif;
-            font-size: 1rem;
-            letter-spacing: 3px;
-            text-transform: uppercase;
-            padding: 18px 52px;
-            border-radius: 6px;
-            border: 1px solid rgba(255,255,255,0.25);
-            transition: background-color 0.25s, color 0.25s, transform 0.2s;
-        }
-
-        .cta-inner a:hover {
-            background-color: #ffffff;
-            color: #2f3825;
-            transform: translateY(-2px);
-        }
-
-        @media (max-width: 470px) {
-            .cta-inner h6 {
-                font-size: 1.8rem;
-            }
-
-            .cta-inner p {
-                font-size: 0.9rem;
-            }
-
-            .cta-inner a {
-                font-size: 0.85rem;
-                padding: 14px 36px;
-            }
-        }
-
-        /* ── FOOTER ── */
         .container4 footer {
             grid-area: footerr;
             background-color: #2f382554;
@@ -407,15 +362,29 @@
             padding: 20px;
         }
 
-        .f1 { justify-content: space-evenly; }
-        .f2 { justify-content: space-between; }
-        .f3 { justify-content: space-between; }
-        .f4 { justify-content: start; gap: 10px; }
+        .f1 {
+            justify-content: space-evenly;
+        }
+
+        .f2 {
+            justify-content: space-between;
+        }
+
+        .f3 {
+            justify-content: space-between;
+        }
+
+        .f4 {
+            justify-content: start;
+            gap: 10px;
+        }
 
         .f4 img {
             height: 1.8rem;
             width: 1.8rem;
         }
+
+
 
         .f4 div {
             display: flex;
@@ -428,6 +397,8 @@
             word-spacing: 2px;
             color: #ffffff;
         }
+
+
 
         .fcontainer h6 {
             font-family: Georgia, serif;
@@ -444,7 +415,16 @@
             font-size: 20px;
             color: #ffffff;
             text-decoration: none;
+
         }
+
+
+
+
+
+
+
+
 
         .pinakafooter {
             grid-area: footerrr;
@@ -462,7 +442,104 @@
             color: #ffffff;
         }
 
+
+
+
+
+
+        @media (max-width: 970px) {
+
+            .container4 {
+                display: grid;
+                grid-template-areas:
+                    "main"
+                    "footerr"
+                    "footerrr";
+                grid-template-rows: 70fr 25fr 5fr;
+            }
+
+
+        }
+
+        @media (max-width: 900px) {
+            .cardcontainer2 {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+
+            .cardcontainer {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .cardcontainer .bottomr {
+                grid-column: 1/3;
+            }
+
+
+
+
+            .cardcontainer div>div {
+                height: 30vh;
+                width: 40vw;
+                gap: 10px;
+
+            }
+
+
+            .header3 h3 {
+                padding-bottom: 20px;
+                font-size: 2em;
+            }
+
+            .header3 p {
+                padding-bottom: 20px;
+            }
+
+
+            .container2 {
+                display: grid;
+                min-height: 100vh;
+            }
+        }
+
+
+
+        @media (max-width: 800px) {
+            .fcontainer {
+                display: grid;
+                grid-template-areas: "f2 f3 f4";
+                grid-template-columns: 0 1fr 1fr 1fr;
+                height: 100%;
+            }
+
+            .f1 {
+                display: none;
+            }
+
+            .f1 img {
+                display: none;
+            }
+
+            .f1 p {
+                display: none;
+            }
+
+            .f4 {
+                justify-content: space-between;
+            }
+
+
+
+
+
+            .cardcontainer div div p {
+                font-size: 13px;
+            }
+        }
+
+
         @media (max-width: 600px) {
+
             .links {
                 display: flex;
                 justify-content: center;
@@ -473,17 +550,107 @@
                 display: none;
             }
 
-            .fcontainer {
-                grid-template-areas: "f3 f4";
-                grid-template-columns: 1fr 1fr;
+            @media (max-width: 550px) {
+                .cardcontainer2 {
+                    grid-template-columns: 1fr;
+                }
+
+                table th,
+                table td {
+                    padding: 10px 12px;
+                    font-size: 0.85rem;
+                }
+
+                .header2 h3 {
+                    font-size: 2rem;
+                }
+
+
+
+                .cardcontainer div div p {
+                    font-size: 10px;
+                }
             }
 
-            .f1, .f2 {
+
+            .fcontainer {
+                display: grid;
+                grid-template-areas: "f3 f4";
+                grid-template-columns: 0 0 1fr 1fr;
+                height: 100%;
+            }
+
+            .f2 h6 {
+                display: none;
+
+            }
+
+            .f2 a {
+
                 display: none;
             }
 
+
+
             .pinakafooter p {
                 font-size: 10px;
+            }
+        }
+
+        @media (max-width: 470px) {
+
+            body {
+                overflow-x: hidden;
+            }
+
+            .container h6 {
+                font-size: 2em;
+            }
+
+            .container p {
+                font-size: 13px;
+            }
+
+
+            .container a {
+                font-size: 15px;
+            }
+
+            .links {
+                justify-content: center;
+                gap: 20px;
+            }
+
+
+
+
+            .container4 main h6 {
+                font-size: 1.5em;
+
+            }
+
+            .container4 main p {
+                font-size: 13px;
+            }
+
+            .container4 main a {
+                font-size: 15px;
+                padding: 20px;
+            }
+
+
+            .container4 footer p,
+            .container4 footer a {
+                font-size: 10px;
+            }
+
+            .container4 {
+                display: grid;
+                grid-template-areas:
+                    "main"
+                    "footerr"
+                    "footerrr";
+                grid-template-rows: 65fr 30fr 5fr;
             }
         }
     </style>
@@ -491,7 +658,6 @@
 
 <body>
 
-    <!-- ── HERO ── -->
     <div class="container">
         <div class="bgoverlay"></div>
         <header>
@@ -502,6 +668,7 @@
                     <a href="about.html">About</a>
                     <a href="content.html">Content</a>
                     <a href="booknow.html">Book now</a>
+
                 </div>
             </nav>
         </header>
@@ -511,13 +678,13 @@
                 <div style="padding: 0 11vw; text-align: center; display: flex; align-items: center; flex-direction: column;"
                     class="title">
                     <h6>Janevent</h6>
-                    <p>The Perfect Place for your Special Moments.</p>
+                    <p>The Perfect Place for your
+                        Special Moments.</p>
                 </div>
             </div>
         </main>
     </div>
 
-    <!-- ── SERVICES ── -->
     <div class="container2">
         <main>
             <div>
@@ -535,7 +702,7 @@
                         <p>FOOD AND DRINKS</p>
                     </div>
                 </div>
-                <div>
+                <div class="bottomr">
                     <div>
                         <p>EVENT PLANNING</p>
                     </div>
@@ -544,52 +711,102 @@
         </main>
     </div>
 
-    <!-- ── WHY CHOOSE US ── -->
     <div class="container3">
-        <div class="container3-header">
-            <h3>WHY CHOOSE US?</h3>
-            <p>Everything you need to make your celebration truly unforgettable</p>
+
+        <div class="header3">
+            <h3>Plan Your Perfect Event Today </h3>
+            <p>Browse our packages and pricing to find the perfect fit to your special ocassion.</p>
+        </div>
+        <p class="header2">VENUE PACKAGES</p>
+        <div class="cardcontainer2">
+            <div class="pricecard">
+                <p class="cardname">Private Dining Hall</p>
+                <p class="cardcapacity">Up to 60 guests</p>
+                <p class="cardprice">₱ 15,000</p>
+                <p class="cardnote">starting price</p>
+            </div>
+            <div class="pricecard">
+                <p class="cardname">Rooftop Terrace</p>
+                <p class="cardcapacity">Up to 100 guests</p>
+                <p class="cardprice">₱ 22,000</p>
+                <p class="cardnote">starting price</p>
+            </div>
+            <div class="pricecard best">
+                <p class="cardname">Garden Pavilion</p>
+                <p class="cardcapacity">Up to 200 guests</p>
+                <p class="cardprice">₱ 35,000</p>
+                <p class="cardnote">most popular</p>
+            </div>
+            <div class="pricecard">
+                <p class="cardname">Grand Ballroom</p>
+                <p class="cardcapacity">Up to 500 guests</p>
+                <p class="cardprice">₱ 60,000</p>
+                <p class="cardnote">starting price</p>
+            </div>
         </div>
 
-        <div class="whyus-grid">
-            <div class="whyus-card">
-                <div class="whyus-icon">🏅</div>
-                <h5>Experienced Staff</h5>
-                <p>Our professional and dedicated team has handled hundreds of events — so your big day is always in expert hands.</p>
-            </div>
-            <div class="whyus-card">
-                <div class="whyus-icon">🌿</div>
-                <h5>Beautiful Venue</h5>
-                <p>Scenic gardens, elegant halls, and stunning spaces that set the perfect backdrop for any celebration.</p>
-            </div>
-            <div class="whyus-card">
-                <div class="whyus-icon">📦</div>
-                <h5>Flexible Packages</h5>
-                <p>From intimate gatherings to grand occasions, we have packages to fit every vision and budget.</p>
-            </div>
-            <div class="whyus-card">
-                <div class="whyus-icon">💰</div>
-                <h5>Affordable Pricing</h5>
-                <p>Premium quality service at fair and transparent prices — no hidden fees, just value you can count on.</p>
-            </div>
-        </div>
+        <div class="header2">ADD-ON SERVICES</div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Add-On</th>
+                    <th>Description</th>
+                    <th>Starting Price</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Catering and Bar</td>
+                    <td>Full buffet setup with bar service for your guests</td>
+                    <td>₱ 8,000</td>
+                </tr>
+                <tr>
+                    <td>Photography</td>
+                    <td>Professional photographer for the full event duration</td>
+                    <td>₱ 5,000</td>
+                </tr>
+                <tr>
+                    <td>AV and Lighting</td>
+                    <td>Sound system, projector, and event lighting setup</td>
+                    <td>₱ 4,500</td>
+                </tr>
+                <tr>
+                    <td>Floral Décor</td>
+                    <td>Custom floral arrangements for tables and entrance</td>
+                    <td>₱ 3,500</td>
+                </tr>
+                <tr>
+                    <td>Live Music / DJ</td>
+                    <td>Live band or professional DJ for 4 hours</td>
+                    <td>₱ 6,000</td>
+                </tr>
+                <tr>
+                    <td>Event Coordinator</td>
+                    <td>Dedicated coordinator to manage your event on the day</td>
+                    <td>₱ 3,000</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <footer>
+            <p>Ready to plan your event? Get an exact quote in minutes.</p>
+            <a href="booknow.html">Book Now →</a>
+        </footer>
+
     </div>
 
-    <!-- ── CTA / BOOK NOW ── -->
+
+
     <div class="container4">
         <main>
-            <div class="cta-inner">
-                <h6>Let's Make Your Next Event Unforgettable</h6>
-                <p>Book your date with us today and create memories that last a lifetime. Our team is ready to bring your vision to life.</p>
-                <a href="booknow.html">BOOK NOW</a>
-            </div>
-        </main>
 
+        </main>
         <footer>
             <div class="fcontainer">
                 <div class="f1">
                     <img src="logo.png" alt="logo">
-                    <p>The Perfect Place for your Special Moments.</p>
+                    <p>The Perfect Place for your
+                        Special Moments.</p>
                 </div>
                 <div class="f2">
                     <a href="home.html">Home</a>
@@ -610,14 +827,14 @@
                         <a href="Ig"><img src="icon/instagram.png" alt="Instagram icon"></a>
                         <a href="Tiktok"><img src="icon/tiktok.png" alt="Tiktok icon"></a>
                     </div>
+
                 </div>
             </div>
         </footer>
-
         <div class="pinakafooter">
             <p>&copy; 2026 Janevent. All Rights Reserved.</p>
         </div>
     </div>
-
 </body>
+
 </html>
