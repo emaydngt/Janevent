@@ -64,11 +64,6 @@
             letter-spacing: 2px;
             word-spacing: 2px;
             color: #ffffff;
-            font-weight: normal;
-            text-decoration: none;
-            font-style: normal;
-            font-variant: normal;
-            text-transform: none;
         }
 
         .container header {
@@ -137,6 +132,7 @@
             font-family: Georgia, serif;
             letter-spacing: 2px;
             word-spacing: 2px;
+
         }
 
         .container2 h3 {
@@ -157,6 +153,21 @@
             height: 67vh;
         }
 
+        .img1 {
+            background-image: url(img/img3.jpg);
+            background-size: cover;
+        }
+
+        .img2 {
+            background-image: url(img/img5.jpg);
+            background-size: cover;
+        }
+
+        .img3 {
+            background-image: url(img/img4.jpg);
+            background-size: cover;
+        }
+
         .cardcontainer div>div {
             height: 65vh;
             margin: auto;
@@ -169,6 +180,11 @@
 
         .container2 p {
             color: white;
+            filter: drop-shadow(0 0 1px rgba(0, 0, 0, 0.5));
+            font-family: Georgia, serif;
+            padding: 10px;
+            background-color: #2f3825;
+            border-radius: 10px;
 
         }
 
@@ -262,6 +278,11 @@
             color: #FFFFFF;
         }
 
+        table tr th {
+            background-color: #2f3825;
+            color: white;
+        }
+
         table {
             width: 100%;
             border-collapse: collapse;
@@ -277,6 +298,14 @@
             letter-spacing: 1px;
         }
 
+        table tr:nth-child(even) {
+            background-color: #eeeae2;
+        }
+
+        table tr:nth-child(odd) {
+            background-color: #f7f5f0;
+        }
+
         table td:last-child {
             font-weight: bold;
             color: #2f3825;
@@ -290,8 +319,9 @@
         .container3 footer p {
             font-size: 0.95rem;
             color: #555;
-            margin-bottom: 20px;
+            margin-bottom: 40px;
             letter-spacing: 1px;
+
         }
 
         .container3 footer a {
@@ -495,7 +525,6 @@
 
             .container2 {
                 display: grid;
-                min-height: 100vh;
             }
 
 
@@ -535,9 +564,6 @@
                 display: none;
             }
 
-            .f4 {
-                justify-content: space-between;
-            }
 
 
 
@@ -704,17 +730,17 @@
             </div>
             <div class="cardcontainer">
                 <div>
-                    <div>
+                    <div class="img1">
                         <p>SWIMMING POOL</p>
                     </div>
                 </div>
                 <div>
-                    <div>
+                    <div class="img2">
                         <p>FOOD AND DRINKS</p>
                     </div>
                 </div>
                 <div class="bottomr">
-                    <div>
+                    <div class="img3">
                         <p>EVENT PLANNING</p>
                     </div>
                 </div>
