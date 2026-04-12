@@ -508,9 +508,6 @@
                 display: none;
             }
 
-            .f4 {
-                justify-content: space-between;
-            }
         }
 
 
@@ -787,11 +784,11 @@
                                     <label for="venue">Preferred venue</label>
                                     <select id="venue">
                                         <option value="">Select a venue</option>
-                                        <option>Grand Ballroom — up to 500 guests</option>
-                                        <option>Garden Pavilion — up to 200 guests</option>
-                                        <option>Rooftop Terrace — up to 100 guests</option>
-                                        <option>Private Dining Hall — up to 60 guests</option>
-                                        <option>I have my own venue</option>
+                                        <option value="15000">Private Dining Hall — up to 60 guests</option>
+                                        <option value="22000">Rooftop Terrace — up to 100 guests</option>
+                                        <option value="35000">Garden Pavilion — up to 200 guests</option>
+                                        <option value="60000">Grand Ballroom — up to 500 guests</option>
+                                        <option value="0">I have my own venue</option>
                                     </select>
                                 </div>
 
@@ -809,27 +806,32 @@
                         <p class="sectioname">Add-ons</p>
                         <div class="add-ons">
                             <label class="addonitem">
-                                <input type="checkbox" />
+                                <input type="checkbox" class="addon" data-price="8000" />
                                 <span class="addon-label">Catering & bar</span>
                             </label>
+
                             <label class="addonitem">
-                                <input type="checkbox" />
+                                <input type="checkbox" class="addon" data-price="5000" />
                                 <span class="addon-label">Photography</span>
                             </label>
+
                             <label class="addonitem">
-                                <input type="checkbox" />
+                                <input type="checkbox" class="addon" data-price="4500" />
                                 <span class="addon-label">AV & lighting</span>
                             </label>
+
                             <label class="addonitem">
-                                <input type="checkbox" />
+                                <input type="checkbox" class="addon" data-price="3500" />
                                 <span class="addon-label">Floral décor</span>
                             </label>
+
                             <label class="addonitem">
-                                <input type="checkbox" />
+                                <input type="checkbox" class="addon" data-price="6000" />
                                 <span class="addon-label">Live music / DJ</span>
                             </label>
+
                             <label class="addonitem">
-                                <input type="checkbox" />
+                                <input type="checkbox" class="addon" data-price="3000" />
                                 <span class="addon-label">Event coordinator</span>
                             </label>
                         </div>
@@ -847,7 +849,7 @@
                             <div class="price-preview">
                                 <span style="font-size:11px;text-transform:uppercase;letter-spacing:0.08em;">Estimated
                                     starting from</span>
-                                <strong id="price-out">₱ 28,000</strong>
+                                <strong id="price">₱ 28,000</strong>
                             </div>
                             <button class="btnbook" onclick="handleBook()">Request booking →</button>
                         </div>
@@ -885,7 +887,7 @@
     <div class="container4">
         <main>
             <div>
-                <iframe <iframe
+                <iframe
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1144.774447636383!2d121.11945450678776!3d14.57801773577716!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397c79b626b53a7%3A0x9b1dbb80fb380be!2sOne%20Cainta%20College!5e0!3m2!1sen!2sph!4v1775882522484!5m2!1sen!2sph"
                     allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 
@@ -927,20 +929,44 @@
         </div>
     </div>
 
-
     <script>
         const guestSlider = document.getElementById('guests');
         const guestLabel = document.getElementById('guestnumber');
-        const guests = parseInt(guestSlider.value);
+        const priceDisplay = document.getElementById('price');
+        const addons = document.querySelectorAll('.addon');
+        const venueSelect = document.getElementById('venue');
 
+        const perguest = 150;
 
-        function update() {
+        function updateAll() {
             const guests = parseInt(guestSlider.value);
+
             guestLabel.textContent = guests + ' people';
+
+            let total = guests * perguest;
+
+            const venuePrice = parseInt(venueSelect.value) || 0;
+            total += venuePrice;
+
+            addons.forEach(addon => {
+                if (addon.checked) {
+                    total += parseInt(addon.dataset.price);
+                }
+            });
+
+            priceDisplay.textContent = "₱ " + total.toLocaleString();
         }
 
-        guestSlider.addEventListener('input', update);
+        guestSlider.addEventListener('input', updateAll);
+        venueSelect.addEventListener('change', updateAll);
+
+        addons.forEach(addon => {
+            addon.addEventListener('change', updateAll);
+        });
+
+        updateAll();
     </script>
+
 </body>
 
 </html>
