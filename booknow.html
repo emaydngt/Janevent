@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Janevent</title>
     <style>
         * {
             margin: 0;
@@ -706,27 +706,31 @@
 
                 <div style="display: flex; flex-direction: column;">
                     <h1 class="formhead">BOOKING FORM</h1>
-                    <form action="booknow.html" method="post">
+
+                    <!-- action="https://formspree.io/f/xkokwnzb" -->
+                    <form action="" method="post" id="bookingform">
 
                         <div class="responsive">
                             <div class="fieldrow">
                                 <div class="field">
                                     <label for="fname">First name</label>
-                                    <input type="text" id="fname" placeholder="Emay" />
+                                    <input type="text" id="fname" name="first_name" placeholder="Emay" />
                                 </div>
                                 <div class="field">
                                     <label for="lname">Last name</label>
-                                    <input type="text" id="lname" placeholder="Dangate" />
+                                    <input type="text" id="lname" name="last_name" placeholder="Dangate" required />
                                 </div>
                             </div>
                             <div class="fieldrow">
                                 <div class="field">
                                     <label for="email">Email address</label>
-                                    <input type="email" id="email" placeholder="emay@example.com" />
+                                    <input type="email" id="email" name="email" placeholder="emay@example.com"
+                                        required />
                                 </div>
                                 <div class="field">
                                     <label for="phone">Phone number</label>
-                                    <input type="tel" id="phone" placeholder="+63 912 345 6789" />
+                                    <input type="number" id="phone" name="phone" placeholder="+63 912 345 6789" step="1"
+                                        min="0" />
                                 </div>
                             </div>
                         </div>
@@ -771,18 +775,18 @@
                             <div class="fieldrow">
                                 <div class="field">
                                     <label for="event-date">Event date</label>
-                                    <input type="date" id="event-date" />
+                                    <input type="date" id="event-date" name="event_date" required />
                                 </div>
                                 <div class="field">
                                     <label for="event-time">Start time</label>
-                                    <input type="time" id="event-time" value="18:00" />
+                                    <input type="time" id="event-time" name="event_time" required />
                                 </div>
                             </div>
 
                             <div class="fieldrow">
                                 <div class="field">
                                     <label for="venue">Preferred venue</label>
-                                    <select id="venue">
+                                    <select id="venue" name="venue" required>
                                         <option value="">Select a venue</option>
                                         <option value="15000">Private Dining Hall — up to 60 guests</option>
                                         <option value="22000">Rooftop Terrace — up to 100 guests</option>
@@ -797,7 +801,8 @@
                                 <div class="field">
                                     <label>Expected guests — <span id="guestnumber">80 people</span></label>
                                     <div class="guests-row" style="margin-top: 6px;">
-                                        <input type="range" id="guests" min="10" max="500" step="10" value="80" />
+                                        <input type="range" id="guests" name="guests" min="10" max="500" step="10"
+                                            value="80" />
                                     </div>
                                 </div>
                             </div>
@@ -851,7 +856,7 @@
                                     starting from</span>
                                 <strong id="price">₱ 28,000</strong>
                             </div>
-                            <button class="btnbook" onclick="handleBook()">Request booking →</button>
+                            <button class="btnbook" type="submit" >Request booking →</button>
                         </div>
 
 
@@ -866,7 +871,7 @@
                 <div>
                     <img src="icon/location.png" alt="location icon">
                     <h6>Our location</h6>
-                    <p>Brgy. Green Hills, City, philippines</p>
+                    <p>Janevent Place, Cainta, Rizal, Philippines</p>
                 </div>
                 <div>
                     <img src="icon/telephone.png" alt="call icon">
@@ -876,7 +881,7 @@
                 <div class="bottom">
                     <img src="icon/mail.png" alt="mail icon">
                     <h6>Email</h6>
-                    <p>info@janevent.com<br>We'll respond soon!</p>
+                    <p>janevent@gmail.com<br>We'll respond soon!</p>
                 </div>
 
             </footer>
@@ -911,7 +916,7 @@
                     <h6>Contact</h6>
                     <p>+63 912 345 6789</p>
                     <p>janevent@gmail.com</p>
-                    <p>Brgy, Cainta, Rizal, Philippines.</p>
+                    <p>Janevent Place, Cainta, Rizal, Philippines</p>
                 </div>
                 <div class="f4">
                     <h6>Follow us</h6>
@@ -965,6 +970,17 @@
         });
 
         updateAll();
+
+        const form = document.getElementById("bookingform");
+
+        form.addEventListener("submit", function (event) {
+            event.preventDefault(); 
+
+            if (form.checkValidity()) {
+                alert("✅ Booking successful!");
+                form.reset(); 
+            }
+        });
     </script>
 
 </body>
